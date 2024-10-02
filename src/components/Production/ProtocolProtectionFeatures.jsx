@@ -28,7 +28,7 @@ const FeatureCard = ({ icon: Icon, title, description }) => (
 
 const ProtocolProtectionFeatures = () => {
   return (
-    <div className="bg-gradient-to-b from-[#0a0b2e] to-[#1a0b4b] py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="bg-gradient-to-b from-[#0a0b2e] to-[#1a0b4b] py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden font-dmSans">
       <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute h-full w-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iIzBhMGIyZSI+PC9yZWN0Pgo8cGF0aCBkPSJNMCAwTDYwIDYwWk02MCAwTDAgNjBaIiBzdHJva2U9IiMxYTBiNGIiIHN0cm9rZS13aWR0aD0iMC41Ij48L3BhdGg+Cjwvc3ZnPg==')]"
