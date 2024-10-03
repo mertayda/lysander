@@ -4,7 +4,7 @@ import Protocol from "../Protocol/Protocol";
 
 const Aegis = () => {
   return (
-    <div className="bg-slate-900 text-white   py-20 font-dmSans">
+    <div className="bg-slate-800 text-white  max-h-screen py-20 font-dmSans">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 ">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           <div className="lg:w-1/2">
