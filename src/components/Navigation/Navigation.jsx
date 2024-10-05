@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/logo.png";
+import logo from "../../assets/logo.png";
 
 const navItems = [
-  { name: "Lossless Prodtocol", href: "/" },
+  { name: "Lysander Prodtocol", href: "/" },
   { name: "Aegls", href: "/aegls" },
   { name: "Ecosystem", href: "/ecosystem" },
   { name: "Developers", href: "/developers" },
