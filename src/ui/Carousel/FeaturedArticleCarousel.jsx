@@ -8,7 +8,7 @@ const FeaturedArticleCarousel = ({ articles }) => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % articles.length);
-    }, 5000); // Auto-advance every 5 seconds
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [articles.length]);

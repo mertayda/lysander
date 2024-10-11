@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext, useMemo } from "react";
 import { initialArticles } from "../data/initialArticles";
+import { writers as initialWriters } from "../data/writers";
 
 const BlogContext = createContext();
 
@@ -7,11 +8,16 @@ export const useBlogContext = () => useContext(BlogContext);
 
 export const BlogProvider = ({ children }) => {
   const [articles, setArticles] = useState(initialArticles);
+  const [writers, setWriters] = useState(initialWriters);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
 
+  const getWriterByName = (name) => {
+    return writers.find((writer) => writer.name === name);
+  };
+
   const addArticle = (newArticle) => {
-    setArticles([newArticle, ...articles]);
+    setArticles((prevArticles) => [newArticle, ...prevArticles]);
   };
 
   const filteredArticles = useMemo(() => {
@@ -32,7 +38,7 @@ export const BlogProvider = ({ children }) => {
   };
 
   const getArticleById = (id) => {
-    return articles.find((article) => article.id === parseInt(id));
+    return articles.find((article) => article.id === id);
   };
 
   const getRelatedArticles = (currentArticle, limit = 3) => {
@@ -53,12 +59,14 @@ export const BlogProvider = ({ children }) => {
     <BlogContext.Provider
       value={{
         articles,
+        writers,
         addArticle,
         handleSearch,
         handleCategorySelect,
         filteredArticles,
         getRelatedArticles,
         getArticleById,
+        getWriterByName,
         getUniqueCategories,
         searchQuery,
         selectedCategory,

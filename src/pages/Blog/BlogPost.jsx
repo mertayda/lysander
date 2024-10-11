@@ -10,6 +10,14 @@ const BlogPost = ({ article }) => {
       exit={{ opacity: 0, y: -20 }}
       className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800 border border-blue-500/30 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-500 group"
     >
+      <div className="relative h-48 overflow-hidden">
+        <img
+          src={article.image}
+          alt={article.title}
+          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
+      </div>
       <div className="p-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-blue-500/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         <div className="flex justify-between items-start mb-4">

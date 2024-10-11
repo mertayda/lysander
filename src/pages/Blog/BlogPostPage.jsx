@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useBlogContext } from "../../context/BlogContext";
+import ReusableHero from "../../components/HomeHero/ReusableHero";
+
+import Footer from "../../components/Footer/Footer";
+import AuthorProfile from "./BlogComponents/AuthorProfile";
 
 const BlogPostPage = () => {
   const { id } = useParams();
-  const { articles } = useBlogContext();
+  const { getArticleById, getWriterByName } = useBlogContext();
   const [article, setArticle] = useState(null);
+  const [articleAuthor, setArticleAuthor] = useState(null);
 
   useEffect(() => {
-    const foundArticle = articles.find((a) => a.id === id);
+    const foundArticle = getArticleById(id);
     setArticle(foundArticle);
-  }, [id, articles]);
+
+    if (foundArticle && foundArticle.author) {
+      const foundAuthor = getWriterByName(foundArticle.author);
+
+      setArticleAuthor(foundAuthor);
+    }
+  }, [id, getArticleById, getWriterByName]);
 
   if (!article) {
     return (
@@ -22,14 +33,18 @@ const BlogPostPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 text-white">
-      <div className="container mx-auto px-4 py-12">
+      <ReusableHero title={article.title} fullHeight={false} />
+      <div className=" max-w-3xl  mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
         <div className="mb-8 text-gray-300">
-          <p>
-            By {article.author} | {new Date(article.date).toLocaleDateString()}{" "}
-            | {article.readTime}
+          {articleAuthor ? (
+            <AuthorProfile writers={articleAuthor} />
+          ) : (
+            <p>Author information not available</p>
+          )}
+          <p className="mt-4">
+            {article.readTime} | Category: {article.category}
           </p>
-          <p>Category: {article.category}</p>
           {article.featured && (
             <p className="text-yellow-400">Featured Article</p>
           )}
@@ -56,6 +71,7 @@ const BlogPostPage = () => {
           </div>
         )}
       </div>
+      <Footer />
     </div>
   );
 };

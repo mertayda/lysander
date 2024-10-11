@@ -1,3 +1,21 @@
+import finance1 from "../assets/BlogImages/finance1.png";
+import finance2 from "../assets/BlogImages/finance2.png";
+import finance3 from "../assets/BlogImages/finance3.png";
+import finance4 from "../assets/BlogImages/finance4.png";
+import finance5 from "../assets/BlogImages/finance5.png";
+import finance6 from "../assets/BlogImages/finance6.png";
+import finance8 from "../assets/BlogImages/finance8.png";
+import finance9 from "../assets/BlogImages/finance9.png";
+import finance10 from "../assets/BlogImages/finance10.png";
+import finance11 from "../assets/BlogImages/finance11.png";
+import finance12 from "../assets/BlogImages/finance12.png";
+import finance13 from "../assets/BlogImages/finance13.png";
+import finance14 from "../assets/BlogImages/finance14.png";
+import finance15 from "../assets/BlogImages/finance15.png";
+import finance16 from "../assets/BlogImages/finance16.png";
+import finance17 from "../assets/BlogImages/finance17.png";
+import finance18 from "../assets/BlogImages/finance18.png";
+
 export const initialArticles = [
   {
     id: "1",
@@ -18,7 +36,8 @@ export const initialArticles = [
       { id: 1, author: "Bob", content: "Great article! Very insightful.", date: "2024-03-16" },
       { id: 2, author: "Charlie", content: "I'd love to see more about quantum-resistant algorithms.", date: "2024-03-17" }
     ],
-    readTime: "5 min read"
+    readTime: "5 min read",
+    image: finance1
   },
   {
     id: "2",
@@ -38,7 +57,8 @@ export const initialArticles = [
     comments: [
       { id: 1, author: "Alice", content: "This is a crucial topic for the future of crypto!", date: "2024-03-21" }
     ],
-    readTime: "7 min read"
+    readTime: "7 min read",
+    image: finance2
   },
   {
     id: "3",
@@ -59,7 +79,8 @@ export const initialArticles = [
       { id: 1, author: "David", content: "This is a game-changer for user privacy!", date: "2024-03-26" },
       { id: 2, author: "Eva", content: "I'm excited to see how this technology evolves.", date: "2024-03-27" }
     ],
-    readTime: "8 min read"
+    readTime: "8 min read",
+    image: finance3
   },
   {
     id: "4",
@@ -80,7 +101,8 @@ export const initialArticles = [
       { id: 1, author: "Frank", content: "Great overview of smart contract auditing best practices.", date: "2024-04-03" },
       { id: 2, author: "Grace", content: "I'll be sure to follow these guidelines for my upcoming DApp launch.", date: "2024-04-04" }
     ],
-    readTime: "10 min read"
+    readTime: "10 min read",
+    image: finance4
   },
   {
     id: "5",
@@ -101,7 +123,8 @@ export const initialArticles = [
       { id: 1, author: "Henry", content: "Fascinating article on the privacy implications of zero-knowledge proofs.", date: "2024-04-11" },
       { id: 2, author: "Isabella", content: "I'm excited to see how this technology can be applied to DeFi protocols.", date: "2024-04-12" }
     ],
-    readTime: "12 min read"
+    readTime: "12 min read",
+    image: finance5
   },
   {
     id: "6",
@@ -122,7 +145,8 @@ export const initialArticles = [
       { id: 1, author: "Jack", content: "Great overview of the potential of decentralized storage in Web3.", date: "2024-04-19" },
       { id: 2, author: "Karen", content: "I'm excited to see how this technology can disrupt traditional cloud storage providers.", date: "2024-04-20" }
     ],
-    readTime: "9 min read"
+    readTime: "9 min read",
+    image: finance6
   },
   {
     id: "7",
@@ -143,7 +167,8 @@ export const initialArticles = [
       { id: 1, author: "Liam", content: "This is a crucial topic as the Web3 ecosystem matures.", date: "2024-04-26" },
       { id: 2, author: "Maria", content: "Great insights on the security implications of blockchain interoperability.", date: "2024-04-27" }
     ],
-    readTime: "11 min read"
+    readTime: "11 min read",
+    image: finance8
   },
   {
     id: "8",
@@ -164,7 +189,8 @@ export const initialArticles = [
       { id: 1, author: "Nathan", content: "Essential reading for anyone building or using DeFi applications.", date: "2024-05-03" },
       { id: 2, author: "Olivia", content: "Great overview of the security challenges and solutions in the DeFi space.", date: "2024-05-04" }
     ],
-    readTime: "15 min read"
+    readTime: "15 min read",
+    image: finance9
   },
   {
     id: "9",
@@ -185,7 +211,8 @@ export const initialArticles = [
       { id: 1, author: "Paul", content: "Great overview of the security implications of Layer 2 solutions.", date: "2024-05-11" },
       { id: 2, author: "Quinn", content: "I'm looking forward to seeing how these technologies evolve to address scalability and security concerns.", date: "2024-05-12" }
     ],
-    readTime: "13 min read"
+    readTime: "13 min read",
+    image: finance10
   },
   {
     id: "10",
@@ -206,7 +233,8 @@ export const initialArticles = [
       { id: 1, author: "Rachel", content: "Great insights on the security challenges facing decentralized governance.", date: "2024-05-19" },
       { id: 2, author: "Alice", content: "This is an important topic as the DAO ecosystem continues to evolve.", date: "2024-05-20" }
     ],
-    readTime: "14 min read"
+    readTime: "14 min read",
+    image: finance11
   },
   {
     id: "11",
@@ -227,7 +255,8 @@ export const initialArticles = [
       { id: 1, author: "Sam", content: "AI is definitely the future of cybersecurity.", date: "2024-05-26" },
       { id: 2, author: "Tina", content: "Exciting to see how AI can enhance Web3 security.", date: "2024-05-27" }
     ],
-    readTime: "10 min read"
+    readTime: "10 min read",
+    image: finance12
   },
   {
     id: "12",
@@ -248,7 +277,8 @@ export const initialArticles = [
       { id: 1, author: "Ursula", content: "Regulatory compliance is a must for the long-term success of Web3 projects.", date: "2024-06-02" },
       { id: 2, author: "Victor", content: "Great insights on the importance of regulatory compliance in Web3.", date: "2024-06-03" }
     ],
-    readTime: "12 min read"
+    readTime: "12 min read",
+    image: finance13
   },
   {
     id: "13",
@@ -269,7 +299,8 @@ export const initialArticles = [
       { id: 1, author: "Walter", content: "A comprehensive overview of consensus mechanisms in blockchain.", date: "2024-06-09" },
       { id: 2, author: "Xena", content: "Exciting to see the evolution of consensus mechanisms.", date: "2024-06-10" }
     ],
-    readTime: "11 min read"
+    readTime: "11 min read",
+    image: finance14
   },
   {
     id: "14",
@@ -290,7 +321,8 @@ export const initialArticles = [
       { id: 1, author: "Yara", content: "Community is indeed the heart of Web3 projects.", date: "2024-06-16" },
       { id: 2, author: "Zane", content: "Great insights on the importance of community in Web3 success.", date: "2024-06-17" }
     ],
-    readTime: "9 min read"
+    readTime: "9 min read",
+    image: finance15
   },
   {
     id: "15",
@@ -311,7 +343,8 @@ export const initialArticles = [
       { id: 1, author: "Abby", content: "NFTs have so much potential beyond digital art!", date: "2024-06-23" },
       { id: 2, author: "Ben", content: "Exciting to see the future applications of NFTs.", date: "2024-06-24" }
     ],
-    readTime: "8 min read"
+    readTime: "8 min read",
+    image: finance16
   },
   {
     id: "16",
@@ -332,7 +365,8 @@ export const initialArticles = [
       { id: 1, author: "Cathy", content: "DAOs are the future of governance in Web3.", date: "2024-06-30" },
       { id: 2, author: "Dan", content: "Great overview of the role of DAOs in Web3 governance.", date: "2024-07-01" }
     ],
-    readTime: "10 min read"
+    readTime: "10 min read",
+    image: finance17
   },
   {
     id: "17",
@@ -353,7 +387,8 @@ export const initialArticles = [
       { id: 1, author: "Ella", content: "Exciting to see the potential of Web3 and IoT together.", date: "2024-07-07" },
       { id: 2, author: "Fred", content: "Great insights on the opportunities and challenges of Web3 and IoT.", date: "2024-07-08" }
     ],
-    readTime: "11 min read"
+    readTime: "11 min read",
+    image: finance18
   },
   {
     id: "18",
@@ -374,7 +409,8 @@ export const initialArticles = [
       { id: 1, author: "Gina", content: "Tokenomics is indeed a key factor in Web3 project success.", date: "2024-07-14" },
       { id: 2, author: "Harry", content: "Great insights on the role of tokenomics in Web3.", date: "2024-07-15" }
     ],
-    readTime: "12 min read"
+    readTime: "12 min read",
+    image: finance1
   },
   {
     id: "19",
@@ -395,7 +431,8 @@ export const initialArticles = [
       { id: 1, author: "Ian", content: "Web3 is definitely shaking up traditional finance.", date: "2024-07-21" },
       { id: 2, author: "Jenny", content: "Great overview of the impact of Web3 on finance.", date: "2024-07-22" }
     ],
-    readTime: "13 min read"
+    readTime: "13 min read",
+    image: finance2
   },
   {
     id: "20",
@@ -416,7 +453,7 @@ export const initialArticles = [
       { id: 1, author: "Kevin", content: "Exciting to see the future trends in Web3.", date: "2024-07-28" },
       { id: 2, author: "Linda", content: "Great insights on the future of Web3.", date: "2024-07-29" }
     ],
-    readTime: "14 min read"
+    readTime: "14 min read",
+    image: finance3
   }
-  
-]
+];
