@@ -1,32 +1,68 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import { useBlogContext } from "../../context/BlogContext";
 import ReusableHero from "../../components/HomeHero/ReusableHero";
-
 import Footer from "../../components/Footer/Footer";
 import AuthorProfile from "./BlogComponents/AuthorProfile";
+import { motion } from "framer-motion";
 
 const BlogPostPage = () => {
   const { id } = useParams();
   const { getArticleById, getWriterByName } = useBlogContext();
   const [article, setArticle] = useState(null);
   const [articleAuthor, setArticleAuthor] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const foundArticle = getArticleById(id);
-    setArticle(foundArticle);
+  const fetchArticleData = useCallback(async () => {
+    try {
+      setIsLoading(true);
+      const foundArticle = await getArticleById(id);
+      if (!foundArticle) throw new Error("Article not found");
 
-    if (foundArticle && foundArticle.author) {
-      const foundAuthor = getWriterByName(foundArticle.author);
+      setArticle(foundArticle);
 
-      setArticleAuthor(foundAuthor);
+      if (foundArticle.author) {
+        const foundAuthor = await getWriterByName(foundArticle.author);
+        setArticleAuthor(foundAuthor);
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
     }
   }, [id, getArticleById, getWriterByName]);
 
-  if (!article) {
+  useEffect(() => {
+    fetchArticleData();
+  }, [fetchArticleData]);
+
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 flex items-center justify-center">
-        <p className="text-white text-2xl">Loading...</p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-white text-2xl"
+        >
+          Loading...
+        </motion.p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 flex items-center justify-center">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-white text-2xl"
+        >
+          Error: {error}
+        </motion.p>
       </div>
     );
   }
@@ -34,43 +70,79 @@ const BlogPostPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-blue-900 text-white">
       <ReusableHero title={article.title} fullHeight={false} />
-      <div className=" max-w-3xl  mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
+      <motion.article
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+      >
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          {article.title}
+        </h1>
         <div className="mb-8 text-gray-300">
           {articleAuthor ? (
             <AuthorProfile writers={articleAuthor} />
           ) : (
             <p>Author information not available</p>
           )}
-          <p className="mt-4">
+          <p className="mt-4 text-sm sm:text-base">
             {article.readTime} | Category: {article.category}
           </p>
           {article.featured && (
-            <p className="text-yellow-400">Featured Article</p>
+            <p className="text-yellow-400 text-sm sm:text-base mt-2">
+              Featured Article
+            </p>
           )}
         </div>
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-2">Excerpt</h2>
-          <p className="text-gray-300">{article.excerpt}</p>
-        </div>
-        <div className="prose prose-invert max-w-none">
+        <motion.figure
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8"
+        >
+          <img
+            className="w-full object-cover rounded-xl h-64 sm:h-80 md:h-96"
+            src={article.image}
+            alt={article.title}
+            loading="lazy"
+          />
+        </motion.figure>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="prose prose-sm sm:prose lg:prose-lg prose-invert max-w-none"
+        >
           <div dangerouslySetInnerHTML={{ __html: article.content }} />
-        </div>
+        </motion.div>
         {article.comments && article.comments.length > 0 && (
-          <div className="mt-12">
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-12"
+          >
             <h2 className="text-2xl font-semibold mb-4">Comments</h2>
-            {article.comments.map((comment) => (
-              <div key={comment.id} className="mb-4 bg-gray-800 p-4 rounded">
+            {article.comments.map((comment, index) => (
+              <motion.div
+                key={comment.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                className="mb-4 bg-gray-800 p-4 rounded"
+              >
                 <p className="font-semibold">{comment.author}</p>
-                <p className="text-gray-300">{comment.content}</p>
-                <p className="text-sm text-gray-400">
+                <p className="text-gray-300 text-sm sm:text-base">
+                  {comment.content}
+                </p>
+                <p className="text-xs sm:text-sm text-gray-400 mt-2">
                   {new Date(comment.date).toLocaleDateString()}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.section>
         )}
-      </div>
+      </motion.article>
       <Footer />
     </div>
   );

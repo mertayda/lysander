@@ -42,17 +42,20 @@ const BlogList = () => {
   };
 
   return (
-    <div className="space-y-8">
-      <div className="flex justify-between items-center">
-        <div>
-          <label htmlFor="sort-select" className="mr-2 text-gray-300">
+    <div className="space-y-4 sm:space-y-8">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
+        <div className="w-full sm:w-auto">
+          <label
+            htmlFor="sort-select"
+            className="block sm:inline-block mr-2 text-gray-300 mb-2 sm:mb-0"
+          >
             Sort by:
           </label>
           <select
             id="sort-select"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value)}
-            className="bg-gray-700 text-white px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full sm:w-auto bg-gray-700 text-white px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="date">Date</option>
             <option value="readTime">Read Time</option>
@@ -60,7 +63,7 @@ const BlogList = () => {
         </div>
         <button
           onClick={() => setViewMode(viewMode === "grid" ? "list" : "grid")}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300"
+          className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300"
         >
           {viewMode === "grid" ? "List View" : "Grid View"}
         </button>
@@ -73,9 +76,9 @@ const BlogList = () => {
           animate="visible"
           className={`grid ${
             viewMode === "grid"
-              ? "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
               : "grid-cols-1"
-          } gap-8`}
+          } gap-4 sm:gap-8`}
         >
           {visibleArticles.map((article) => (
             <motion.div key={article.id} variants={itemVariants}>
@@ -94,7 +97,7 @@ const BlogList = () => {
         >
           <button
             onClick={handleLoadMore}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition duration-300 transform hover:scale-105"
+            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition duration-300 transform hover:scale-105"
           >
             Load More
           </button>

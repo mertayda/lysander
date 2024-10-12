@@ -8,34 +8,44 @@ const HomeHero = () => {
       <Navigation />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 flex flex-col lg:flex-row items-center justify-between">
         <div className="lg:w-1/2 mb-12 lg:mb-0">
-          <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             Restoring Trust in Web3 Security
           </h1>
-          <p className="text-lg text-gray-300 mb-8 max-w-xl">
+          <p className="text-base sm:text-lg text-gray-300 mb-8 max-w-xl">
             Lysander adds a security layer to blockchain transactions,
             safeguarding projects and communities from malicious exploits and
             financial losses.
           </p>
-          <button className="bg-gradient-to-r from-[#7a38fe] to-[#3eb1fc] text-white px-8 py-3 rounded-full text-lg hover:opacity-90 flex items-center">
+          <button className="bg-gradient-to-r from-[#7a38fe] to-[#3eb1fc] text-white px-6 sm:px-8 py-3 rounded-full text-base sm:text-lg hover:opacity-90 transition-opacity duration-300 flex items-center">
             Get Started
-            <span className="ml-2">➔</span>
+            <span className="ml-2 text-xl" aria-hidden="true">
+              ➔
+            </span>
           </button>
-          <div className="flex mt-12 space-x-12">
+          <div className="flex mt-12 space-x-8 sm:space-x-12">
             <div>
-              <div className="text-4xl font-bold text-white">2000+</div>
-              <div className="text-sm text-gray-400">Protected Contracts</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white">
+                2000+
+              </div>
+              <div className="text-xs sm:text-sm text-gray-400">
+                Protected Contracts
+              </div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-white">3+ Billion</div>
-              <div className="text-sm text-gray-400">Scanned Transactions</div>
+              <div className="text-3xl sm:text-4xl font-bold text-white">
+                3+ Billion
+              </div>
+              <div className="text-xs sm:text-sm text-gray-400">
+                Scanned Transactions
+              </div>
             </div>
           </div>
         </div>
-        <div className="lg:w-1/2  ">
+        <div className="lg:w-1/2">
           <img
             src={shield}
-            alt="Web3 Security"
-            className="w-full max-w-lg mx-auto h-full"
+            alt="Web3 Security Shield"
+            className="w-full max-w-lg mx-auto h-auto"
           />
         </div>
       </div>

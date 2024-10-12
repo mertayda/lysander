@@ -8,9 +8,9 @@ const BlogPost = ({ article }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className="bg-gradient-to-br from-gray-900 via-blue-900 to-gray-800 border border-blue-500/30 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-500 group"
+      className="bg-gradient-to-br  mx-auto from-gray-900 via-blue-900 to-gray-800 border border-blue-500/30 rounded-xl overflow-hidden hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-500 group"
     >
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
         <img
           src={article.image}
           alt={article.title}
@@ -18,25 +18,25 @@ const BlogPost = ({ article }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-60"></div>
       </div>
-      <div className="p-6 relative overflow-hidden">
+      <div className="p-4 sm:p-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-blue-500/5 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        <div className="flex justify-between items-start mb-4">
-          <span className="inline-block px-3 py-1 text-xs font-semibold bg-blue-500/20 text-blue-300 rounded-full backdrop-blur-sm">
+        <div className="flex flex-wrap justify-between items-start mb-3 sm:mb-4">
+          <span className="inline-block px-2 py-1 text-xs font-semibold bg-blue-500/20 text-blue-300 rounded-full backdrop-blur-sm mb-2 sm:mb-0">
             {article.category}
           </span>
         </div>
-        <h2 className="text-2xl font-bold mb-3 text-blue-300 group-hover:text-blue-200 transition-colors duration-300">
+        <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-blue-300 group-hover:text-blue-200 transition-colors duration-300">
           <Link to={`/blog/${article.id}`} className="hover:underline">
             {article.title}
           </Link>
         </h2>
-        <p className="text-gray-300 mb-4 line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
+        <p className="text-sm sm:text-base text-gray-300 mb-3 sm:mb-4 line-clamp-3 group-hover:line-clamp-none transition-all duration-500">
           {article.excerpt}
         </p>
-        <div className="flex flex-wrap items-center text-sm text-gray-400 space-x-4">
-          <span className="flex items-center">
+        <div className="flex flex-wrap items-center text-xs sm:text-sm text-gray-400 space-x-2 sm:space-x-4">
+          <span className="flex items-center mb-1 sm:mb-0">
             <svg
-              className="w-4 h-4 mr-1 text-blue-400"
+              className="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-blue-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -51,9 +51,12 @@ const BlogPost = ({ article }) => {
             </svg>
             {article.author}
           </span>
-          <time className="flex items-center" dateTime={article.date}>
+          <time
+            className="flex items-center mb-1 sm:mb-0"
+            dateTime={article.date}
+          >
             <svg
-              className="w-4 h-4 mr-1 text-blue-400"
+              className="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-blue-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -68,9 +71,9 @@ const BlogPost = ({ article }) => {
             </svg>
             {article.date}
           </time>
-          <span className="flex items-center">
+          <span className="flex items-center mb-1 sm:mb-0">
             <svg
-              className="w-4 h-4 mr-1 text-blue-400"
+              className="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-blue-400"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -87,17 +90,17 @@ const BlogPost = ({ article }) => {
           </span>
         </div>
       </div>
-      <div className="bg-blue-900/30 p-4 flex justify-between items-center backdrop-blur-sm">
-        <span className="text-sm text-blue-300">
+      <div className="bg-blue-900/30 p-3 sm:p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center backdrop-blur-sm">
+        <span className="text-xs sm:text-sm text-blue-300 mb-2 sm:mb-0">
           {article.comments ? article.comments.length : 0} comments
         </span>
         <Link
           to={`/blog/${article.id}`}
-          className="text-blue-300 hover:text-blue-100 hover:bg-blue-500/20 px-4 py-2 rounded-full transition-all duration-300 group-hover:scale-105 flex items-center"
+          className="text-blue-300 hover:text-blue-100 hover:bg-blue-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full transition-all duration-300 group-hover:scale-105 flex items-center text-sm sm:text-base"
         >
           Read More
           <svg
-            className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+            className="w-3 h-3 sm:w-4 sm:h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

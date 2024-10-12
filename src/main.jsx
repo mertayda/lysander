@@ -6,9 +6,11 @@ import App from "./App.jsx";
 import "./index.css";
 import Home from "./pages/Home/Home.jsx";
 import BlogPage from "./pages/Blog/BlogPage.jsx";
-import BlogPostPage from "./pages/Blog/BlogPostPage.jsx"; // Import the BlogPostPage component
+import BlogPostPage from "./pages/Blog/BlogPostPage.jsx";
+import Aegis from "./pages/Aegis/Aegis.jsx";
+import Ecosystem from "./pages/Ecosystem/Ecosystem.jsx";
+import Developer from "./pages/Developers/Developer.jsx";
 
-// Root component that wraps everything with BlogProvider
 const Root = () => (
   <BlogProvider>
     <Outlet />
@@ -25,11 +27,23 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
+        path: "/aegis",
+        element: <Aegis />,
+      },
+      {
+        path: "/ecosystem",
+        element: <Ecosystem />,
+      },
+      {
+        path: "/developers",
+        element: <Developer />,
+      },
+      {
         path: "/blog",
         element: <BlogPage />,
       },
       {
-        path: "/blog/:id", // Add this new route for individual blog posts
+        path: "/blog/:id",
         element: <BlogPostPage />,
       },
     ],
