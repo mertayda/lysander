@@ -6,6 +6,7 @@ import {
   Github,
   MessageSquare,
 } from "lucide-react";
+import logo from "../../assets/Logo.png";
 
 const senctions = [
   {
@@ -68,11 +69,7 @@ const Footer = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
-            <img
-              src="/path-to-lysander-logo.svg"
-              alt="Lysander"
-              className="h-10 w-auto mb-6"
-            />
+            <img src={logo} alt="Lysander" className="h-10 w-auto mb-6" />
             <p className="text-gray-300 text-sm leading-relaxed">
               Lysander leads the charge in Web3 security, delivering
               state-of-the-art protocol transaction security solutions. Our
@@ -103,7 +100,6 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Social and Contact */}
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-700 pt-8">
           <div className="flex space-x-6 mb-4 md:mb-0">
             {[
