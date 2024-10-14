@@ -160,7 +160,7 @@ const BlogPage = () => {
             exit={{ opacity: 0, scale: 0 }}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
             onClick={scrollToTop}
-            className="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-colors duration-300 z-50"
+            className="fixed bottom-8 right-8 bg-pictonBlue hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-colors duration-300 z-50"
             aria-label="Scroll to top"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

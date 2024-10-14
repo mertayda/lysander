@@ -25,7 +25,7 @@ const BlogPost = ({ article }) => {
             {article.category}
           </span>
         </div>
-        <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-blue-300 group-hover:text-blue-200 transition-colors duration-300">
+        <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-3 text-pictonBlue group-hover:text-blue-200 transition-colors duration-300">
           <Link to={`/blog/${article.id}`} className="hover:underline">
             {article.title}
           </Link>
@@ -36,7 +36,7 @@ const BlogPost = ({ article }) => {
         <div className="flex flex-wrap items-center text-xs sm:text-sm text-gray-400 space-x-2 sm:space-x-4">
           <span className="flex items-center mb-1 sm:mb-0">
             <svg
-              className="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-blue-400"
+              className="w-3 h-3 sm:w-4 sm:h-4 mr-1 text-pictonBlue"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -96,7 +96,7 @@ const BlogPost = ({ article }) => {
         </span>
         <Link
           to={`/blog/${article.id}`}
-          className="text-blue-300 hover:text-blue-100 hover:bg-blue-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full transition-all duration-300 group-hover:scale-105 flex items-center text-sm sm:text-base"
+          className="text-pictonBlue hover:text-blue-100 hover:bg-blue-500/20 px-3 py-1 sm:px-4 sm:py-2 rounded-full transition-all duration-300 group-hover:scale-105 flex items-center text-sm sm:text-base"
         >
           Read More
           <svg

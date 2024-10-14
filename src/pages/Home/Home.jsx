@@ -10,7 +10,6 @@ const Home = () => {
   return (
     <div>
       <HomeHero />
-
       <Protocol></Protocol>
       <ProtocolProtectionFeatures></ProtocolProtectionFeatures>
       <Community></Community>

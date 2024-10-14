@@ -63,7 +63,7 @@ const BlogList = () => {
         </div>
         <button
           onClick={() => setViewMode(viewMode === "grid" ? "list" : "grid")}
-          className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300"
+          className="w-full sm:w-auto bg-pictonBlue hover:bg-blue-700 text-white px-4 py-2 rounded-md transition duration-300"
         >
           {viewMode === "grid" ? "List View" : "Grid View"}
         </button>
@@ -97,7 +97,7 @@ const BlogList = () => {
         >
           <button
             onClick={handleLoadMore}
-            className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition duration-300 transform hover:scale-105"
+            className="w-full sm:w-auto bg-pictonBlue hover:bg-blue-700 text-white px-6 py-3 rounded-md transition duration-300 transform hover:scale-105"
           >
             Load More
           </button>
