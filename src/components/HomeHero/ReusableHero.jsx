@@ -10,10 +10,12 @@ const ReusableHero = ({ title, description, fullHeight = true }) => {
     >
       <Navigation />
       <div className="relative z-20  flex flex-col justify-center  mx-auto   items-center  min-h-screen ">
-        <h1 className="lg:text-6xl font-bold text-white leading-tight mb-6 ">
+        <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold text-white leading-tight mb-6 ">
           {title}
         </h1>
-        <p className="text-lg text-gray-300 mb-8">{description}</p>
+        <p className="lg:text-xl md:text-lg text-md text-gray-300 mb-8">
+          {description}
+        </p>
       </div>
     </div>
   );
