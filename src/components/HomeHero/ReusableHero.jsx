@@ -9,7 +9,7 @@ const ReusableHero = ({ title, description, fullHeight = true }) => {
       } overflow-hidden font-dmSans bg-gradient-to-br  from-[#070b24] to-[#2a1758]`}
     >
       <Navigation />
-      <div className="relative z-20  flex flex-col justify-center  mx-auto   items-center  min-h-screen ">
+      <div className="relative z-20  flex flex-col justify-center  mx-auto  text-center  items-center  min-h-screen ">
         <h1 className="lg:text-6xl md:text-4xl text-2xl font-bold text-white leading-tight mb-6 ">
           {title}
         </h1>
